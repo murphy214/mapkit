@@ -1,5 +1,6 @@
 setup.py
 mapkit/__init__.py
+mapkit/ident.py
 mapkit/pipehtml.py
 mapkit/postgis_interface.py
 mapkit/quickmaps.py

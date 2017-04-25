@@ -4,7 +4,9 @@ from pipevts import a,cln
 from nlgeojson import make_blocks,make_lines,make_points,make_line,geodf_to_nldf
 from postgis_interface import *
 from pipegls import * 
+from ident import *
 from quickmaps import *
+
 
 def eval_config(config):
 	import pipegls
