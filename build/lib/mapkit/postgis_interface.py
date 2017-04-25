@@ -3,7 +3,7 @@ import pandas as pd
 import sys
 import itertools
 from sqlalchemy import create_engine
-from nlgeojson import stringify
+from nlgeojson import _stringify
 import simplejson as json
 '''
 Purpose: This module exists as an easy postgis integration module its purpose is to
@@ -375,7 +375,7 @@ def get_coordstring(geometry):
 		long=float(row[0])
 		lat=float(row[1])
 		coords.append([long,lat])
-	return stringify(coords)
+	return _stringify(coords)
 
 def get_cords_json(coords):
 	data = '{"a":%s}' % coords.decode('utf-8') 

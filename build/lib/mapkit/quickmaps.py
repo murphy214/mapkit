@@ -1452,4 +1452,12 @@ def make_color_mask(data1,data2,header1,header2):
 	data2['COLORKEY'] = data2[header2].map(lambda x: data1dict[x])
 	return data2
 
+def make_line_frame(csvfilename,outfilename):
+	data = pd.read_csv(csvfilename)
+	data = ['motorway', 'motorway_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link', 'trunk', 'trunk_link', 'residential', 'living_street', 'road', 'escape', 'rest_area', 'disused', 'unclassified']
+	sorter = dict(zip(data,range(len(data))))
+	lines = pd.read_csv('west-virginia.csv')
+	lines.loc[:]['sort'] = lines.highway.map(lambda x:sorter[x])
+	lines = lines.sort(['sort'],ascending=[0])
 
+	lines = lines[['gid','coords','oneway']].to_csv(outfilename,index=False)

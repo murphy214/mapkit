@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(name='mapkit',
       version='1.0',
@@ -8,5 +8,16 @@ setup(name='mapkit',
       author='Bennett Murphy',
       author_email='murphy214@live.marshall.edu',
       url='https://github.com/murphy214/mapkit',
-      packages=['mapkit']
+      packages=['mapkit'],
+      install_requires = ['nlgeojson',
+      						'pipeleaflet',
+      						'pipevts',
+      						'pipegls',
+      						'future',
+      						'geopandas',
+      						'numpy',
+      						'pandas',
+      						'python-geohash >= 0.8.5'
+      						]
+
      )
