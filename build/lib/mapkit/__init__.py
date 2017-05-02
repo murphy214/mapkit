@@ -6,6 +6,7 @@ from postgis_interface import *
 from pipegls import * 
 from ident import *
 from quickmaps import *
+from map_xyz import *
 
 
 def eval_config(config):
