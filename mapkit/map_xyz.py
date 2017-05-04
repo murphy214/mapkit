@@ -1,6 +1,7 @@
 import math
 import pandas as pd
 import mapkit as mk
+import mercantile
 # gets coords from a string representation of coords
 def get_cords_json(coords):
 	data = '{"a":%s}' % coords
@@ -14,14 +15,15 @@ def num2deg(xtile, ytile, zoom):
   lat_deg = math.degrees(lat_rad)
   return (lon_deg, lat_deg)
 
-def get_bounds(x,y,z):
-	pt1 = num2deg(x,y,z)
-
-	pt2 = num2deg(x+1,y+1,z)
-
-	deltax,deltay = [(pt2[0] - pt1[0])/2.0,(pt2[1] - pt1[1])/2.0]
-
-	return {'e':pt1[0]+deltax,'w':pt1[0]-deltax,'s':pt1[1]-deltay,'n':pt1[1]+deltay}
+def get_bounds(x):
+	x,y,z = str.split(x,'/')
+	a = mercantile.bounds(int(x),int(y),int(z))
+	p1 = [a.west,a.south] # ll
+	p2 = [a.west,a.north] # ul
+	p3 = [a.east,a.north] # ur
+	p4 = [a.east,a.south] # lr
+	coords = [[p1,p2,p3,p4,p1]]
+	return str(coords) 
 
 def deg2num(lat_deg, lon_deg, zoom):
   lat_rad = math.radians(lat_deg)
@@ -57,14 +59,31 @@ def map_cards(data):
 	for i in data.columns.values:
 		if 'xyz' in str(i).lower():
 			xyzheader = i
-	
-	cards = pd.DataFrame([wrapbounds(*str.split(i,'/')) for i in data[xyzheader].values])
-	data[['NORTH','SOUTH','EAST','WEST']] = cards[['n','s','e','w']]
-
+	data['COORDS'] = data[xyzheader].map(get_bounds)	
 	return data
+'''
+import mercantile
 
+a = mercantile.bounds(1309541,1517183,22)
+print a.north,44.488729562036475
+#s44.4797892079483
+b= mercantile.bounds(1309986,1517451,22)
+import mapkit as mk
 
+data = pd.read_csv('d.csv')
+data = data[data.ID == 'd']
+mk.make_blocks(data[:10],'')
 
+#
+'''
+'''
+data = pd.read_csv('d.csv')
+data = data[1:][data.ID == 'd']
+
+data=  map_cards(data)
+mk.make_blocks(data,'')
+mk.b()
+'''
 '''
 data = pd.read_csv('points_example.csv')
 
