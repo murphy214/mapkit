@@ -1,6 +1,3 @@
-pipeleaflet
-pipevts
-pipegls
 future
 geopandas
 numpy
