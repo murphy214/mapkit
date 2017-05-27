@@ -10,9 +10,9 @@ setup(name='mapkit',
       url='https://github.com/murphy214/mapkit',
       packages=['mapkit'],
       install_requires = [#'nlgeojson',
-      						'pipeleaflet',
-      						'pipevts',
-      						'pipegls',
+      						#'pipeleaflet',
+      						#'pipevts',
+      						#'pipegls',
       						'future',
       						'geopandas',
       						'numpy',
@@ -21,6 +21,6 @@ setup(name='mapkit',
       						],
 
       scripts = ['bin/myfreeport'],
-      dependency_links=['http://github.com/murphy214/nlgeojson/tarball/master#egg=package-1.0']
+      dependency_links=['http://github.com/murphy214/nlgeojson/tarball/master#egg=package-1.0','http://github.com/murphy214/pipeleaflet/tarball/master#egg=package-1.0','http://github.com/murphy214/pipevts/tarball/master#egg=package-1.0','http://github.com/murphy214/pipegls/tarball/master#egg=package-1.0']
 
       )
