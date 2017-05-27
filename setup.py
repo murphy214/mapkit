@@ -9,7 +9,7 @@ setup(name='mapkit',
       author_email='murphy214@live.marshall.edu',
       url='https://github.com/murphy214/mapkit',
       packages=['mapkit'],
-      install_requires = ['nlgeojson',
+      install_requires = [#'nlgeojson',
       						'pipeleaflet',
       						'pipevts',
       						'pipegls',
@@ -18,6 +18,9 @@ setup(name='mapkit',
       						'numpy',
       						'pandas',
       						'python-geohash >= 0.8.5'
-      						]
+      						],
 
-     )
+      scripts = ['bin/myfreeport'],
+      dependency_links=['http://github.com/murphy214/nlgeojson/tarball/master#egg=package-1.0']
+
+      )

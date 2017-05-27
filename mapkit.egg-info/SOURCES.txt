@@ -1,4 +1,5 @@
 setup.py
+bin/myfreeport
 mapkit/__init__.py
 mapkit/ident.py
 mapkit/map_xyz.py

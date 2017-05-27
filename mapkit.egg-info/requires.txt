@@ -1,4 +1,3 @@
-nlgeojson
 pipeleaflet
 pipevts
 pipegls
