@@ -7,6 +7,7 @@ from pipegls import *
 from ident import *
 from quickmaps import *
 from map_xyz import *
+from pipegeohash import *
 
 
 def eval_config(config):

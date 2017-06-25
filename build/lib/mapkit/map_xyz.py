@@ -2,6 +2,7 @@ import math
 import pandas as pd
 import mapkit as mk
 import mercantile
+import json
 # gets coords from a string representation of coords
 def get_cords_json(coords):
 	data = '{"a":%s}' % coords
