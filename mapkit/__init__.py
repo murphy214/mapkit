@@ -1,14 +1,14 @@
 from pipehtml import c
 from pipeleaflet import b
 from pipevts import a,cln
-from nlgeojson import make_blocks,make_lines,make_points,make_line,geodf_to_nldf
+from nlgeojson import make_blocks,make_lines,make_points,make_line,geodf_to_nldf,geodf2nldf
 from postgis_interface import *
 from pipegls import * 
 from ident import *
 from quickmaps import *
 from map_xyz import *
 from pipegeohash import *
-
+from conv_geojson import convert_geojson
 
 def eval_config(config):
 	import pipegls

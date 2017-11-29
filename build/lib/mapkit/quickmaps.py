@@ -74,6 +74,7 @@ def make_uniques(data,column):
 
 	colorlist = []
 	colorlistint = get_heatmap51()
+	random.shuffle(colorlistint)
 	for i in range(int(numlists)):
 		colorlist += colorlistint
 	colorlist = colorlist[:len(uniques)]
@@ -88,25 +89,30 @@ def make_uniques(data,column):
 
 # getting exponents
 def get_expons(val):
+	if val == 0:
+		return [-1,0]
 	count = 0
 	for i in range(-32,32):
 		if count == 0:
 			count = 1
 		else:
-			if i >= 0:
-				if 10 ** abs(oldi) <=  val and 10 ** abs(i) >= val:
-					return oldi,i
+			print 10 ** oldi,10 ** i,val
+			if val >= 0:
+				if 10 ** oldi <=  val and 10 ** i >= val:
+					return [oldi,i]
 			else:
 				#print val,10 ** abs(oldi),
-				if -1 * 10 ** abs(oldi) <=  val and -1 * 10 ** abs(i) >= val:
+				if -1 * 10 ** oldi <=  val and -1 * 10 ** i >= val:
 					return oldi,i
 		oldi = i
+
+#print get_expons(0)
 
 # making exponent numericals rangelist
 def make_numeric_exp(data,column,exp_size=2):
 	# getting min and max val
 	minval,maxval = data[column].min(),data[column].max()
-	minval,maxval = float(minval) - 10 ** -32,float(maxval) + 10 ** -32
+	#minval,maxval = float(minval) - 10 ** -32,float(maxval) + 10 ** -32
 
 	# getting the minimium and maximum exponent
 	minexp,maxexp = get_expons(minval)[0],get_expons(maxval)[1]
@@ -126,7 +132,6 @@ def make_numeric_exp(data,column,exp_size=2):
 def make_numeric_linear(data,column):
 	# getting min and max val
 	minval,maxval = data[column].min(),data[column].max()
-	minval,maxval = float(minval) - 10 ** -32,float(maxval) + 10 ** -32
 
 	# getting the minimium and maximum exponent
 	minexp,maxexp = get_expons(minval)[0],get_expons(maxval)[1]
