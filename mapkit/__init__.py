@@ -9,6 +9,7 @@ from quickmaps import *
 from map_xyz import *
 from pipegeohash import *
 from conv_geojson import convert_geojson
+from smalltalk import Map
 
 def eval_config(config):
 	import pipegls

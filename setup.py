@@ -20,8 +20,17 @@ setup(name='mapkit',
                                           "mercantile",
                                           "psycopg2",
                                           "simplejson",
-                                          "enum"
+                                          "enum",
+                                          'shapely',
+                                          'mercantile',
+                                          'sqlalchemy'
       						],
+      dependency_links = ['http://github.com/murphy214/nlgeojson/tarball/master#egg=nlgeojson-1.0.0',
+      'http://github.com/murphy214/pipeleaflet/tarball/master#egg=pipeleaflet-1.1.0',
+     'http://github.com/murphy214/pipegls/tarball/master#egg=pipegls-1.0.0',
+     'http://github.com/murphy214/pipevts/tarball/master#egg=pipevts-1.0.0',
+     'http://github.com/murphy214/pipegeohash/tarball/master#egg=pipegeohash-1.2.0',
+     'http://github.com/murphy214/smalltalk/tarball/master#egg=smalltalk-1.0.0']
 
       scripts = ['bin/myfreeport'],
       #dependency_links=['http://github.com/murphy214/nlgeojson.git#egg=nlgeojson-1.0']#http://github.com/murphy214/pipeleaflet/tarball/master#egg=package-1.1','http://github.com/murphy214/pipevts/tarball/master#egg=package-1.0','http://github.com/murphy214/pipegls/tarball/master#egg=package-1.0']
