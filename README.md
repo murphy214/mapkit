@@ -1,6 +1,12 @@
 # mapkit
 A namespace in which I can bring in all the misc. repos into my dev enviroment.
 
+
+# Install 
+```
+pip install git+https://github.com/murphy214/mapkit
+```
+
 This module is essentially me bringing in the stack / repos I use on a daily basis it includes:
 ## 4 visualization functions from output geojson.
   * a - outputs html canvas geojson on osm basemap (fast)
