@@ -1,6 +1,0 @@
--e git+git://github.com/murphy214/nlgeojson.git#egg=nlgeojson
--e git+git://github.com/murphy214/pipegls.git#egg=pipegls
--e git+git://github.com/murphy214/pipeleaflet.git#egg=pipeleaflet
--e git+git://github.com/murphy214/pipevts.git#egg=pipevts
--e git+git://github.com/murphy214/pipegeohash.git#egg=pipegeohash
-

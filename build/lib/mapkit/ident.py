@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from nlgeojson import fix_geopandas
 import geopandas as gpd
 import random
 from pipehtml import c

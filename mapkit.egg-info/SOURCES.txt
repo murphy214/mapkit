@@ -1,10 +1,10 @@
+README.md
 setup.py
 bin/myfreeport
 mapkit/__init__.py
 mapkit/conv_geojson.py
 mapkit/ident.py
 mapkit/map_xyz.py
-mapkit/nlgeojson.py
 mapkit/pipehtml.py
 mapkit/postgis_interface.py
 mapkit/quickmaps.py

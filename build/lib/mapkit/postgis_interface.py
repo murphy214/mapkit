@@ -3,8 +3,8 @@ import pandas as pd
 import sys
 import itertools
 from sqlalchemy import create_engine
-from nlgeojson import _stringify
-import simplejson as json
+from nlgeojson.misc import _stringify
+import json
 '''
 Purpose: This module exists as an easy postgis integration module its purpose is to
 bring in database in its entirety into memory in the future in may support more robust querries

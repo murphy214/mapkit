@@ -78,6 +78,7 @@ def make_uniques(data,column):
 	for i in range(int(numlists)):
 		colorlist += colorlistint
 	colorlist = colorlist[:len(uniques)]
+	np.random.shuffle(colorlist)
 
 	# creating the colordictionary that will be mapped
 	colordict = dict(zip(uniques,colorlist))

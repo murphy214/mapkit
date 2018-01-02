@@ -2,9 +2,12 @@ future
 geopandas
 numpy
 pandas
-python-geohash >= 0.8.5
-ipython < 6.0
+python-geohash>=0.8.5
+ipython<6.0
 mercantile
 psycopg2
 simplejson
 enum
+shapely
+mercantile
+sqlalchemy

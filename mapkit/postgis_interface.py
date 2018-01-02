@@ -3,7 +3,7 @@ import pandas as pd
 import sys
 import itertools
 from sqlalchemy import create_engine
-from nlgeojson import _stringify
+from nlgeojson.misc import _stringify
 import json
 '''
 Purpose: This module exists as an easy postgis integration module its purpose is to
