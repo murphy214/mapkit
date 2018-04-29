@@ -1,4 +1,4 @@
-http://github.com/murphy214/nlgeojson/tarball/master#egg=nlgeojson-1.0.0
+http://github.com/murphy214/nlgeojson/tarball/master#egg=nlgeojson-1.1.0
 http://github.com/murphy214/pipeleaflet/tarball/master#egg=pipeleaflet-1.1.0
 http://github.com/murphy214/pipegls/tarball/master#egg=pipegls-1.0.0
 http://github.com/murphy214/pipevts/tarball/master#egg=pipevts-1.0.0

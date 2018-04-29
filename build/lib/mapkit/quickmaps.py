@@ -135,7 +135,7 @@ def make_numeric_linear(data,column):
 	minval,maxval = data[column].min(),data[column].max()
 
 	# getting the minimium and maximum exponent
-	minexp,maxexp = get_expons(minval)[0],get_expons(maxval)[1]
+	#minexp,maxexp = get_expons(minval)[0],get_expons(maxval)[1]
 
 	# default exp size set at 2
 	rangelist = np.linspace(minval,maxval,52)

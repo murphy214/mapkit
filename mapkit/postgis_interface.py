@@ -3,7 +3,6 @@ import pandas as pd
 import sys
 import itertools
 from sqlalchemy import create_engine
-from nlgeojson.misc import _stringify
 import json
 '''
 Purpose: This module exists as an easy postgis integration module its purpose is to
@@ -15,6 +14,14 @@ polygons and linestrings, in the future may also support point data.
 
 Created by: Bennett Murphy
 '''
+
+
+# sringify the output of a line segment
+def _stringify(coords):
+	newlist = []
+	for long,lat in coords:
+		newlist.append('[%s, %s]' % (long,lat))
+	return '[' + ', '.join(newlist) + ']'
 
 # intially connects to database
 def connect_to_db(dbname):

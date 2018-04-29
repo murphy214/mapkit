@@ -3,6 +3,30 @@ import pandas as pd
 import mapkit as mk
 import mercantile
 import json
+import numpy as np
+
+
+# given a point1 x,y and a point2 x,y returns distance in miles
+# points are given in long,lat geospatial cordinates
+def distance(point1,point2):
+	point1 = np.array(point1)
+	point2 = np.array(point2)
+	return np.linalg.norm(point1-point2)
+
+# for a set of a cordinates gets the max distance
+def get_max_distance(coords):
+	coords = get_cords_json(coords)
+	count = 0
+	totaldistance = 0.
+	for point in coords:
+		if count == 0:
+			count = 1
+		else:
+			dist = distance(oldpoint,point)
+			totaldistance += dist
+		oldpoint = point
+	return totaldistance
+
 # gets coords from a string representation of coords
 def get_cords_json(coords):
 	data = '{"a":%s}' % coords
@@ -62,6 +86,22 @@ def map_cards(data):
 			xyzheader = i
 	data['COORDS'] = data[xyzheader].map(get_bounds)	
 	return data
+
+# making max distances
+def make_max_distances(data):
+	coordheader = False
+	for i in data.columns:
+		if 'coord' in str(i).lower():
+			coordheader = i
+
+	data['MAXDISTANCE'] = data[coordheader].map(get_max_distance)
+	return data
+
+
+
+
+
+
 '''
 import mercantile
 
